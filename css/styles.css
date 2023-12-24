@@ -19,11 +19,10 @@ body{
 img{
     display: block;
     max-width: 100%;
-    height: auto;
+    max-height: 400px;
     overflow: hidden;
-   object-fit: cover;
-   height: 400px;
-   max-width: 250px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .nowrap{
@@ -32,14 +31,13 @@ img{
 
 .product{
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    overflow: hidden;
-    gap: 1rem;
-    border: 2px solid black;
-    overflow: hidden;
+    border: 1px solid black;
     border-radius: 10px;
     max-width: 500px;
    background-color: white;
@@ -47,11 +45,9 @@ img{
 
 .product__info{
    display: grid;
+   gap: 1rem;
    padding: 1rem;
-    /* max-width: 900px;
-    max-height: 700px; */
 }
-
 
 .product__title{
     letter-spacing: 0.5rem;
@@ -70,11 +66,11 @@ img{
 
 .product__price{
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
-.product__price h2{
+.product__current_price{
     color: hsl(158, 36%, 37%);
     font-family: 'Fraunces', serif;
     font-weight: 800;
@@ -82,39 +78,36 @@ img{
 
 .product__original__price{
     text-decoration: line-through;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .product__cart{
     border: 2px solid black;
-    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:hsl(158, 36%, 37%) ;
     color: white;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.product__cart h3{
+    display: flex;
+    gap: 0.5rem;
 }
 
 .product__cart:hover{
     background-color: darkgreen;
 }
 
-@media screen and (max-width:504px) {
+@media screen and (max-width:940px) {
     .product{
-        display: flex;
-        flex-direction: column;
-        border-top-right-radius: 15px;
-        border-top-left-radius: 15px;
-        width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 2rem;
-    }
-
-    .product__name{
+        display: grid;
     }
 
     img{
-       max-width: 100%;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
     }
 }
